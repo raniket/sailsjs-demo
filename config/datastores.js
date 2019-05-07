@@ -1,4 +1,4 @@
-require('dotenv').config()
+
 /**
  * Datastores
  * (sails.config.datastores)
@@ -49,8 +49,17 @@ module.exports.datastores = {
     *    (See https://sailsjs.com/config/datastores for help.)                 *
     *                                                                          *
     ***************************************************************************/
-    adapter: process.env.DB_ADAPTER,
-    url: process.env.DB_CONNECTION_STRING
+  //  tunnel(tunnelConfig, (error, connection) => {
+  //    if(error) console.log('TUNNEL CONNECTION ERROR: ', error);
+  //    console.log('TUNNEL CONNECTIN SUCFESS');
+  //  })
+   
+    // adapter: require('sails-postgresql'),
+    // url: 'postgresql://postgres@172.16.10.222/core'
+
+    adapter: require('sails-postgresql'),
+    // url: 'postgresql://postgres:postgres@localhost:5432/testdb' // local testdb
+    url: 'postgresql://postgres@172.16.10.222:5432/core' // local core DB
 
   },
 

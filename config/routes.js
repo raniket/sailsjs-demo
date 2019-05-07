@@ -21,6 +21,18 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
 
+  'get /assessment-candidate': 'AssessmentCandidateController.list',
+  'get /assessment-candidate/:id': 'AssessmentCandidateController.get',
+  'post /assessment-candidate': 'AssessmentCandidateController.create',
+  'put /assessment-candidate/:id': 'AssessmentCandidateController.update',
+  'delete /assessment-candidate/:id': 'AssessmentCandidateController.destroy'
+
+
+  // ANOTHRE EXAMPLE
+  // 'get /assessment-candidate': function(req, res) {
+  //   return res.send('hello');
+  // }
+
 
   /***************************************************************************
   *                                                                          *

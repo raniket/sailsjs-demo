@@ -1,0 +1,1 @@
+{"uuid":"0e9db5a0-0f9f-4128-9b36-5e4223df493c","parent":null,"pid":25476,"argv":["/usr/bin/node","/usr/bin/npm","run","test"],"execArgv":[],"cwd":"/home/raniket/Desktop/demo-1","time":1557230294890,"ppid":25470,"root":"b285b09e-dba7-42d4-abe9-a14210ac54b2","coverageFilename":"/home/raniket/Desktop/demo-1/.nyc_output/0e9db5a0-0f9f-4128-9b36-5e4223df493c.json","files":[]}

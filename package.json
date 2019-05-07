@@ -8,20 +8,33 @@
     "@sailshq/connect-redis": "^3.2.1",
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
+    "ava": "^1.4.1",
+    "babel-register": "^6.26.0",
     "dotenv": "^7.0.0",
     "grunt": "1.0.1",
+    "moment": "^2.24.0",
     "sails": "^1.1.0",
     "sails-hook-grunt": "^3.1.0",
     "sails-hook-orm": "^2.1.1",
     "sails-hook-sockets": "^1.5.5",
-    "sails-mongo": "^1.0.1"
+    "sails-mongo": "^1.0.1",
+    "sails-postgresql": "^1.0.2"
   },
   "devDependencies": {
-    "@sailshq/eslint": "^4.19.3"
+    "@sailshq/eslint": "^4.19.3",
+    "ava": "^1.4.1",
+    "babel-register": "^6.26.0",
+    "nodemon": "^1.19.0",
+    "nyc": "^14.1.0",
+    "supertest": "^4.0.2",
+    "tunnel-ssh": "^4.1.4"
   },
   "scripts": {
+    "local": "nodemon app.js",
     "start": "NODE_ENV=production node app.js",
-    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
+    "test": "ava --verbose",
+    "cover": "nyc npm run test",
+    "test:watch": "node_modules/.bin/ava --verbose --watch",
     "lint": "eslint . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
     "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
   },
@@ -34,5 +47,14 @@
   "license": "",
   "engines": {
     "node": "^8.10"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text",
+      "html"
+    ],
+    "check-coverage": true,
+    "report-dir": "./coverage"
   }
 }

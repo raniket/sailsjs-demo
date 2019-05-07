@@ -51,4 +51,11 @@ try {
 
 
 // Start server
-sails.lift(rc('sails'));
+ sails.lift(rc('sails'));
+
+// console.log('sails ::: ',sails);
+// sails.lift(function(err) {
+//   if(err) {
+//     console.log(err);
+//   }
+// });
