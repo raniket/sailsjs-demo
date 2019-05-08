@@ -11,17 +11,17 @@ module.exports = {
 
   attributes: {
 
-    // is_deleted: {
-    //   type: 'boolean',
-    //   allowNull: false,
-    //   defaultsTo: false,
-    //   columnType: 'boolean'
-    // },
+    is_deleted: {
+      type: 'boolean',
+      allowNull: false,
+      defaultsTo: false,
+      columnType: 'boolean',
+    },
 
-    // verification_code: {
-    //   type: 'string',
-    //   columnType: 'text'
-    // },
+    verification_code: {
+      type: 'string',
+      columnType: 'text',
+    },
 
     invited_at: {
       type: 'ref',
@@ -29,107 +29,113 @@ module.exports = {
       defaultsTo: new Date(),
     },
 
-    // start_date: {
-    //   type: 'ref',
-    //   columnType: 'timestamp',
-    // },
+    start_date: {
+      type: 'ref',
+      columnType: 'timestamp',
+    },
 
-    // end_date: {
-    //   type: 'ref',
-    //   columnType: 'timestamp'
-    // },
+    end_date: {
+      type: 'ref',
+      columnType: 'timestamp',
+    },
 
     attended_at: {
       type: 'ref',
-      columnType: 'timestamp'
+      columnType: 'timestamp',
     },
 
     evaluated_at: {
       type: 'ref',
-      columnType: 'timestamp'
+      columnType: 'timestamp',
     },
 
     assessment_id: {
-      type: 'number',
-      allowNull: false,
-      columnType: 'integer'
+      // type: 'number',
+      // allowNull: false,
+      // columnType: 'integer',
+      
+      model: 'Assessment'
     },
 
     invited_by: {
       type: 'number',
-      columnType: 'integer'
+      columnType: 'integer',
     },
 
     status_id: {
-      type: 'number',
-      allowNull: false,
-      columnType: 'smallint',
-      isIn: [10, 20, 30, 40, 50, 60, 70, 80 ,90, 100]
+      // type: 'number',
+      // allowNull: false,
+      // columnType: 'smallint',
+      // isIn: [10, 20, 30, 40, 50, 60, 70, 80 ,90, 100],
+
+      model: 'Status'
     },
 
     candidate_id: {
+      // type: 'number',
+      // allowNull: false,
+      // columnType: 'integer',
+
+      model: 'Candidate'
+    },
+
+    modified_by: {
       type: 'number',
-      allowNull: false,
+      columnType: 'integer',
+    },
+
+    modified_at: {
+      type: 'ref',
+      columnType: 'timestamp',
+      defaultsTo: new Date(),
+    },
+
+    old_id: {
+      type: 'number',
+      columnType: 'integer',
+    },
+
+    owned_by: {
+      type: 'number',
       columnType: 'integer'
     },
 
-    // modified_by: {
-    //   type: 'number',
-    //   columnType: 'integer',
-    // },
+    deleted_by: {
+      type: 'number',
+      columnType: 'integer',
+    },
 
-    // modified_at: {
-    //   type: 'ref',
-    //   columnType: 'timestamp',
-    //   defaultsTo: new Date()
-    // },
+    deleted_at: {
+      type: 'ref',
+      columnType: 'timestamp',
+    },
 
-    // old_id: {
-    //   type: 'number',
-    //   columnType: 'integer'
-    // },
+    meta: {
+      type: 'json',
+      columnType: 'jsonb',
+      defaultsTo: {}
+    },
 
-    // owned_by: {
-    //   type: 'number',
-    //   type: 'integer'
-    // },
+    created_at: {
+      type: 'ref',
+      columnType: 'timestamp',
+      defaultsTo: new Date(),
+    },
 
-    // deleted_by: {
-    //   type: 'number',
-    //   columnType: 'integer'
-    // },
+    updated_at: {
+      type: 'ref',
+      columnType: 'timestamp',
+    },
 
-    // deleted_at: {
-    //   type: 'ref',
-    //   columnType: 'timestamp'
-    // },
+    created_by: {
+      type: 'number',
+      columnType: 'integer',
+    },
 
-    // meta: {
-    //   type: 'json',
-    //   columnType: 'json',
-    //   defaultsTo: {}
-    // },
-
-    // created_at: {
-    //   type: 'ref',
-    //   columnType: 'timestamp',
-    //   defaultsTo: new Date()
-    // },
-
-    // updated_at: {
-    //   type: 'ref',
-    //   columnType: 'timestamp'
-    // },
-
-    // created_by: {
-    //   type: 'number',
-    //   columnType: 'integer'
-    // },
-
-    // updated_at: {
-    //   type: 'number',
-    //   columnType: 'integer'
-    // }
+    updated_at: {
+      type: 'number',
+      columnType: 'integer',
+    },
 
   },
 

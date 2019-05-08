@@ -19,8 +19,8 @@ module.exports = {
 
     list: async (req, res) => {
         try {
-            const limitData = req.query.limit;
-            const data = await AssessmentCandidate.find({  limit: limitData });
+            // const limitData = req.query.limit;
+            const data = await AssessmentCandidate.find({  limit: 2 });
             return res.status(200).json(data);
         } catch (error) {
             console.log('errro: ', error);
@@ -31,7 +31,7 @@ module.exports = {
     get: async (req, res) => {
         try {
             const id = req.params.id;
-            const data = await AssessmentCandidate.find({id});
+            const data = await AssessmentCandidate.find({id}).populate('assessment_id').populate('candidate_id').populate('status_id');
             if(data.length === 0) return res.status(404).json({message: 'not found'});
             return res.json(data);
         } catch (error) {
